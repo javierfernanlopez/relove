@@ -1,0 +1,44 @@
+<%- include('navbar') %>
+
+<section class="container mt-5">
+    <h1 class="fw-bold text-center">Buy and sell second hand stuff</h1>
+    <h1 class="text-center mb-5">almost, almost, without leaving your couch</h1>
+    <div class="categories">
+        <ul>
+            <li><a href="/" ><img src="/images/icons/all.svg" alt="Icon All">All products</a></li>
+            <li><a href="/category/clothing"><img src="/images/icons/clothing.png" alt="Icon Clothing">Clothing</a></li>
+            <li><a href="/category/electronics"><img src="/images/icons/electronics.png" alt="Icon Electronics">Electronics</a></li>
+            <li><a href="/category/home"><img src="/images/icons/home.png" alt="Icon Home">Home</a></li>
+        </ul>
+    </div>
+    <div class="row gap-4 mt-3 d-flex justify-content-center ">
+            <% result.forEach((product) => { %>
+            
+            <div class="card-product col-6 col-sm-4" style="background-image: url('/images/products/<%= product.product_img %>')">
+            <a href="/products/oneProduct/<%= product.product_id %>" class="card-link">
+
+                <div class="card-details">
+                    <p class="text-title"><%= product.product_name %></p>
+                    <p class="text-body"><%= product.price %> €</p>
+                </div>
+                <a href="/products/oneProduct/<%= product.product_id %>"><button class="card-button">More info</button></a>
+            </a>
+              </div>
+        <% }) %>
+    </div>
+</section>
+<script>
+    // Get the current URL
+    var currentUrl = window.location.href;
+
+    // Get all the links inside the categories list
+    var links = document.querySelectorAll('.categories li a');
+
+    // Loop through the links and check if the href matches the current URL
+    links.forEach(function(link) {
+        if (link.href === currentUrl) {
+            link.parentNode.classList.add('active'); // Add the 'active' class to the parent li element
+        }
+    });
+</script>
+<%- include('footer') %>

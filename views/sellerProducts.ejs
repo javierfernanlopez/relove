@@ -1,0 +1,19 @@
+<section class="container mt-5" id="products">
+    <h1 class="ms-4">Products</h1>
+    <div class="row gap-4 mt-3 d-flex justify-content-center products">
+        <% resultProduct.forEach((product) => { %>
+        
+        <div class="card-product col-6 col-sm-4" style="background-image: url('../../images/products/<%= product.product_img %>')">
+        <a href="/products/oneProduct/<%= product.product_id %>" class="card-link">
+
+            <div class="card-details">
+                <p class="text-title"><%= product.product_name %></p>
+                <p class="text-body"><%= product.price %> €</p>
+            </div>
+            <a href="/products/oneProduct/<%= product.product_id %>"><button class="card-button">More info</button></a>
+        </a>
+          </div>
+    <% }) %>
+</div>
+</section>
+

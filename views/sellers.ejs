@@ -1,0 +1,30 @@
+
+<%- include('navbar') %>
+
+    <div class="container my-4">
+        <h1>Sellers</h1>
+        <div class="row gap-4 mt-3 d-flex justify-content-center sellers">
+            <% result.forEach((seller) => { %>
+                <div class="card-seller py-3">
+                    <div class="card-header">
+                        <a href="/sellers/oneSeller/<%= seller.seller_id %>"><h5><%= seller.seller_name %> <%= seller.seller_last_name %></h5></a>
+                    </div>
+                    <div class="profile-pic">
+                        <a href="/sellers/oneSeller/<%= seller.seller_id %>"><img src="/images/sellers/<%= seller.seller_img %>" alt="<%= seller.seller_name %> <%= seller.seller_last_name %>"></a>
+
+                    </div>
+                    <div class="card-footer">
+                        <div class="action">
+                            <a href="/sellers/oneSeller/<%= seller.seller_id %>"><img src="/images/icons/mail.png" alt="Mail">Mail</a>
+                        </div>
+                        <div class="action">
+                            <a href="/sellers/oneSeller/<%= seller.seller_id %>"><img src="/images/icons/phone.png" alt="Phone">Phone</a>
+                        </div>
+                    </div>
+                </div>
+
+            <% }) %>
+        </div>
+    </div>
+
+  <%- include('footer') %>

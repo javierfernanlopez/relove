@@ -1,0 +1,30 @@
+<%- include('navbar') %>
+
+    <section class="one-seller">
+        <div class="container-relove mt-4">
+          <h1 class="ms-4 fw-bold text-center"><%= resultSeller[0].seller_name %> <%= resultSeller[0].seller_last_name %></h1>
+          <div class="two-containers mt-2 rounded-4 shadow pt-5 mb-4">
+            <div class="seller-img mb-5">
+              <img src="/images/sellers/<%= resultSeller[0].seller_img %>" alt="" class="rounded-4">
+            </div>
+            <div class="product-info mb-5">
+              <p class="fw-bold">Description: </p>
+              <p><%= resultSeller[0].seller_description %></p>
+              <br><br>
+              <p class="fw-bold"><img src="/images/icons/mail.png" alt="" style="width: 20px; margin-right: 5px; padding-bottom: 5px;">Email: <span class="fw-normal"><%= resultSeller[0].email %></span></p>
+              <p class="fw-bold"><img src="/images/icons/phone.png" alt="" style="width: 20px; margin-right: 5px; padding-bottom: 5px;">Phone number: <span class="fw-normal"><%= resultSeller[0].phone_number %></span></p>
+            </div>
+  
+          </div>
+        </div>
+
+      </section>
+    
+    <%- include('sellerProducts') %>
+
+    <%- include('formProduct') %>
+
+
+
+
+<%- include('footer') %>

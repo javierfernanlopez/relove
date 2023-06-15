@@ -1,0 +1,50 @@
+<%- include('navbar') %>
+
+<div class="container mt-5">
+        <h1>Create seller</h1>
+        <div class="row">
+          <div class="col home d-flex justify-content-center">
+            <div class="col-8 col-md-4 formSignIn">
+                <form action="/sellers/signInSeller" method="post" enctype="multipart/form-data" class="d-flex flex-column gap-2">
+                    <span style="color:red; font-style: italic; text-align: center;"> <%= typeof message != 'undefined' ? message : null %></span>
+
+
+                    <div class="input-group flex-nowrap mb-2">
+                      <input type="text" class="form-control" placeholder="Name*" aria-label="Username" aria-describedby="addon-wrapping" name="seller_name">
+                    </div>
+
+                    <div class="input-group flex-nowrap mb-2">
+                      <input type="text" class="form-control" placeholder="Last name*" aria-label="Username" aria-describedby="addon-wrapping" name="seller_last_name">
+                    </div>
+
+                    <div class="input-group flex-nowrap mb-2">
+                      <input type="email" class="form-control" placeholder="Email*" aria-label="Username" aria-describedby="addon-wrapping" name="email">
+                    </div>
+
+                    <div class="input-group flex-nowrap mb-2">
+                      <input type="password" class="form-control" placeholder="Password*" aria-label="Username" aria-describedby="addon-wrapping" name="password">
+                    </div>
+
+                    <div class="input-group flex-nowrap mb-2">
+                      <input type="text" class="form-control" placeholder="Phone number*" aria-label="Username" aria-describedby="addon-wrapping" name="phone_number">
+                    </div>
+
+                    <div class="form-floating mb-2">
+                      <textarea class="form-control" placeholder="Description" id="floatingTextarea" name="seller_description"></textarea>
+                      <label for="floatingTextarea">Description</label>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <label class="input-group-text" for="inputGroupFile02">Profile picture</label>
+                      <input type="file" class="form-control" id="inputGroupFile02" name="img">
+                    </div>
+                    
+                    <button type="submit" class="relove-button">Submit</button>
+                </form>
+
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <%- include('footer') %>

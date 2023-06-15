@@ -1,0 +1,29 @@
+<%- include('navbar') %>
+
+      <section class="one-product">
+        <div class="container-relove mt-4">
+          <h1 class="ms-4"><%= result[0].product_name %></h1>
+          <div class="two-containers mt-2 rounded-4 shadow pt-5 mb-4">
+            <div class="product-img mb-5">
+              <img src="/images/products/<%= result[0].product_img %>" class="rounded-4" alt="">
+            </div>
+            <div class="product-info mb-5">
+              <h2 class="fw-bold"><%= result[0].price %> €</h2>
+              <p><%= result[0].product_description %></p>
+              <p>Category: <%= result[0].category %></p>
+              <p>Status: <%= result[0].product_status %></p>
+            <div class="buttons">
+              <a href="/products/editProduct/<%=result[0].product_id%>"><button class="btn btn-secondary">Edit</button></a>
+              <a href="/products/delProductLogic/<%= result[0].seller_id %>/<%=result[0].product_id %>"><button type="button" class="btn btn-danger">Delete</button></a>
+            </div>
+            </div>
+  
+          </div>
+          <div class="go-seller">
+            <a href="/sellers/oneSeller/<%= result[0].seller_id %>"><button type="button" class="relove-button me-4">Go to seller</button></a>
+          </div>
+        </div>
+
+      </section>
+
+<%- include('footer') %>
